@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1478690814 source:/home/user/sfml/tutors/1/test1/main.cpp
+	"game.h"
+
+1478690799 source:/home/user/sfml/tutors/1/test1/game.cpp
+	"game.h"
+
+1478690814 /home/user/sfml/tutors/1/test1/game.h
+	<SFML/Graphics.hpp>
+
