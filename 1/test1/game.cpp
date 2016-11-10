@@ -129,11 +129,10 @@ void Game::updateStatistics(sf::Time elapsedTime)
 
 	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
 	{
-		mStatisticsText.setString(
-			"Кадров / Second = " + toString(mStatisticsNumFrames) + "\n" +
-			"Time / Update = " + toString(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
 
-		mStatisticsUpdateTime -= sf::seconds(1.0f);
+		mStatisticsText.setString(L"Кадров в секунду = " + towString(mStatisticsNumFrames) + L"\n" +
+			L"Время обновления = " + towString(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + L"us");
+        mStatisticsUpdateTime -= sf::seconds(1.0f);
 		mStatisticsNumFrames = 0;
 	}
 }

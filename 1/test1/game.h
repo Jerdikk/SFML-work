@@ -44,6 +44,16 @@ std::string toString(const T& value)
     return stream.str();
 }
 
+template <typename T>
+std::wstring towString(const T& value);
+
+template <typename T>
+std::wstring towString(const T& value)
+{
+    std::wstringstream stream;
+    stream << value;
+    return stream.str();
+}
 
 
 #endif // GAME_INCLUDED
