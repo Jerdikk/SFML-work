@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-class Game
+class Game: private sf::NonCopyable
 {
 public:
              Game();
@@ -12,14 +12,38 @@ private:
         void processEvents();
         void handlePlayerInput(sf::Keyboard::Key key, bool IsPressed);
         void update(sf::Time deltaTime);
+        void updateStatistics(sf::Time elapsedTime);
         void render();
 
         sf::RenderWindow mWindow;
-        sf::CircleShape mPlayer;
+        sf::Texture  mTexture;
+        sf::Sprite   mPlayer;
+        sf::Font	mFont;
+		sf::Text	mStatisticsText;
+		sf::Time	mStatisticsUpdateTime;
+		std::size_t	mStatisticsNumFrames;
+
         bool mIsMovingUp;
         bool mIsMovingDown;
         bool mIsMovingLeft;
         bool mIsMovingRight;
 };
+
+#include <sstream>
+
+// Since std::to_string doesn't work on MinGW we have to implement
+// our own to support all platforms.
+template <typename T>
+std::string toString(const T& value);
+
+template <typename T>
+std::string toString(const T& value)
+{
+    std::stringstream stream;
+    stream << value;
+    return stream.str();
+}
+
+
 
 #endif // GAME_INCLUDED

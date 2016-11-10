@@ -2,9 +2,10 @@
 1478690814 source:/home/user/sfml/tutors/1/test1/main.cpp
 	"game.h"
 
-1478760477 source:/home/user/sfml/tutors/1/test1/game.cpp
+1478764745 source:/home/user/sfml/tutors/1/test1/game.cpp
 	"game.h"
 
-1478759855 /home/user/sfml/tutors/1/test1/game.h
+1478764492 /home/user/sfml/tutors/1/test1/game.h
 	<SFML/Graphics.hpp>
+	<sstream>
 

@@ -3,19 +3,35 @@
 const sf::Time TimePerFrame = sf::seconds(1.f/60.f);
 const float PlayerSpeed=100.f;
 
-Game::Game():mWindow(sf::VideoMode(800,600), "SFML"), mPlayer()
+Game::Game():mWindow(sf::VideoMode(800,600), "SFML"),
+             mPlayer(), mTexture()
+             , mFont()
+             , mStatisticsText()
+             , mStatisticsUpdateTime()
+             , mStatisticsNumFrames(0)
+             , mIsMovingUp(false)
+             , mIsMovingDown(false)
+             , mIsMovingRight(false)
+             , mIsMovingLeft(false)
 {
-    mPlayer.setRadius(40.f);
-    mPlayer.setPosition(100.f,100.f);
-    mPlayer.setFillColor(sf::Color::Cyan);
+    //mPlayer.setRadius(40.f);
+    //mPlayer.setPosition(100.f,100.f);
+    //mPlayer.setFillColor(sf::Color::Cyan);
+
 
     // Load a sprite to display
-   // sf::Texture texture;
-   // if (!texture.loadFromFile("cb.bmp"))
-   //     return EXIT_FAILURE;
-   // sf::Sprite sprite(texture);
+    if (!mTexture.loadFromFile("Media/Textures/Eagle.png"))
+    {
+        // Fail load texture
+    }
 
+    mPlayer.setTexture(mTexture);
+    mPlayer.setPosition(100.f,100.f);
 
+    mFont.loadFromFile("Media/arial.ttf");
+	mStatisticsText.setFont(mFont);
+	mStatisticsText.setPosition(5.f, 5.f);
+	mStatisticsText.setCharacterSize(10);
 }
 void Game::run()
 {
@@ -24,13 +40,15 @@ void Game::run()
 	// Start the game loop
     while (mWindow.isOpen())
     {
-        timeSinceLastUpdate += clock.restart();
+        sf::Time elapsedTime = clock.restart();
+		timeSinceLastUpdate += elapsedTime;
         while (timeSinceLastUpdate > TimePerFrame)
         {
             timeSinceLastUpdate -= TimePerFrame;
             processEvents();
             update(TimePerFrame);
         }
+        updateStatistics(elapsedTime);
         render();
     }
 }
@@ -97,8 +115,26 @@ void Game::render()
         // Draw the sprite
        // mWindow.draw(sprite);
         mWindow.draw(mPlayer);
+        mWindow.draw(mStatisticsText);
 
         // Update the window
         mWindow.display();
 
 }
+
+void Game::updateStatistics(sf::Time elapsedTime)
+{
+	mStatisticsUpdateTime += elapsedTime;
+	mStatisticsNumFrames += 1;
+
+	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
+	{
+		mStatisticsText.setString(
+			"Кадров / Second = " + toString(mStatisticsNumFrames) + "\n" +
+			"Time / Update = " + toString(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
+
+		mStatisticsUpdateTime -= sf::seconds(1.0f);
+		mStatisticsNumFrames = 0;
+	}
+}
+
