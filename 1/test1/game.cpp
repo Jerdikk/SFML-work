@@ -33,10 +33,18 @@ void Game::processEvents()
         {
             switch (event.type)
             {
-            }
-            // Close window : exit
-            if (event.type == sf::Event::Closed)
+            case sf::Event::KeyPressed:
+                handlePlayerInput(event.key.code,true);
+                break;
+            case sf::Event::KeyReleased:
+                handlePlayerInput(event.key.code,false);
+                break;
+            case sf::Event::Closed:
+                // Close window : exit
                 mWindow.close();
+                break;
+            }
+
         }
 
 
