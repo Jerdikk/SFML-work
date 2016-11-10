@@ -1,5 +1,8 @@
 #include "game.h"
 
+const sf::Time TimePerFrame = sf::seconds(1.f/60.f);
+const float PlayerSpeed=100.f;
+
 Game::Game():mWindow(sf::VideoMode(800,600), "SFML"), mPlayer()
 {
     mPlayer.setRadius(40.f);
@@ -16,13 +19,33 @@ Game::Game():mWindow(sf::VideoMode(800,600), "SFML"), mPlayer()
 }
 void Game::run()
 {
+    sf::Clock clock;
+    sf::Time timeSinceLastUpdate = sf::Time::Zero;
 	// Start the game loop
     while (mWindow.isOpen())
     {
-        processEvents();
-        update();
+        timeSinceLastUpdate += clock.restart();
+        while (timeSinceLastUpdate > TimePerFrame)
+        {
+            timeSinceLastUpdate -= TimePerFrame;
+            processEvents();
+            update(TimePerFrame);
+        }
         render();
     }
+}
+
+void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
+{
+if (key==sf::Keyboard::W)
+    mIsMovingUp = isPressed;
+if (key==sf::Keyboard::S)
+    mIsMovingDown = isPressed;
+if (key==sf::Keyboard::A)
+    mIsMovingLeft = isPressed;
+if (key==sf::Keyboard::D)
+    mIsMovingRight = isPressed;
+
 }
 
 void Game::processEvents()
@@ -50,8 +73,20 @@ void Game::processEvents()
 
 }
 
-void Game::update()
+void Game::update(sf::Time deltaTime)
 {
+
+    sf::Vector2f movement(0.f,0.f);
+    if (mIsMovingUp)
+        movement.y -= PlayerSpeed;
+    if (mIsMovingDown)
+        movement.y += PlayerSpeed;
+    if (mIsMovingLeft)
+        movement.x -= PlayerSpeed;
+    if (mIsMovingRight)
+        movement.x += PlayerSpeed;
+
+    mPlayer.move(movement*deltaTime.asSeconds());
 }
 
 void Game::render()
