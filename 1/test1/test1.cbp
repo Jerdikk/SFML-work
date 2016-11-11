@@ -15,6 +15,7 @@
 					<Add option="-std=c++11" />
 					<Add option="-g" />
 					<Add option="-DSFML_STATIC" />
+					<Add directory="/home/user/sfml/tutors/1/test1/" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics" />
@@ -29,6 +30,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="/home/user/sfml/tutors/1/test1/" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -42,10 +44,17 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="ResourceManager.h" />
+		<Unit filename="ResourceManager.inl" />
+		<Unit filename="aircraft.cpp" />
+		<Unit filename="aircraft.h" />
 		<Unit filename="cb.bmp" />
+		<Unit filename="entity.cpp" />
+		<Unit filename="entity.h" />
 		<Unit filename="game.cpp" />
 		<Unit filename="game.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="scenenode.cpp" />
+		<Unit filename="scenenode.h" />
 		<Extensions>
 			<code_completion />
 			<debugger>
