@@ -12,14 +12,19 @@
 	"ResourceManager.h"
 	<sstream>
 
-1478855974 /home/user/sfml/tutors/1/test1/ResourceManager.h
+1478856292 /home/user/sfml/tutors/1/test1/ResourceManager.h
 	<map>
 	<string>
 	<memory>
 	<stdexcept>
 	<cassert>
 	<SFML/Graphics.hpp>
+	"ResourceManager.inl"
 
 1478855750 source:/home/user/sfml/tutors/1/test1/ResourceManager.cpp
 	"ResourceManager.h"
+
+1478856148 /home/user/sfml/tutors/1/test1/ResourceManager.cpp
+
+1478856148 /home/user/sfml/tutors/1/test1/ResourceManager.inl
 
