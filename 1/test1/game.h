@@ -2,6 +2,7 @@
 #define GAME_INCLUDED
 
 #include <SFML/Graphics.hpp>
+#include "ResourceManager.h"
 
 class Game: private sf::NonCopyable
 {
@@ -27,6 +28,8 @@ private:
         bool mIsMovingDown;
         bool mIsMovingLeft;
         bool mIsMovingRight;
+
+        TextureHolder textures;
 };
 
 #include <sstream>

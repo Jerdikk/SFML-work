@@ -20,12 +20,14 @@ Game::Game():mWindow(sf::VideoMode(800,600), "SFML"),
 
 
     // Load a sprite to display
-    if (!mTexture.loadFromFile("Media/Textures/Eagle.png"))
-    {
+    //if (!mTexture.loadFromFile("Media/Textures/Eagle.png"))
+    //{
         // Fail load texture
-    }
+    //}
 
-    mPlayer.setTexture(mTexture);
+    textures.load(Textures::Airplane,"Media/Textures/Eagle.png");
+
+    mPlayer.setTexture(textures.get(Textures::Airplane));
     mPlayer.setPosition(100.f,100.f);
 
     mFont.loadFromFile("Media/arial.ttf");

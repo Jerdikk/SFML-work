@@ -13,3 +13,9 @@ sf::Texture& TextureHolder::get(Textures::ID id)
     auto found = mTextureMap.find(id);
     return *found->second;
 }
+
+const sf::Texture& TextureHolder::get(Textures::ID id) const
+{
+    auto found = mTextureMap.find(id);
+    return *found->second;
+}
