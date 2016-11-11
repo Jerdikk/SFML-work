@@ -5,8 +5,7 @@ const sf::Time TimePerFrame = sf::seconds(1.f/60.f);
 const float PlayerSpeed=100.f;
 
 Game::Game():mWindow(sf::VideoMode(800,600), "SFML"),
-             mPlayer(), mTexture()
-             , mFont()
+             mPlayer()
              , mStatisticsText()
              , mStatisticsUpdateTime()
              , mStatisticsNumFrames(0)
@@ -28,6 +27,8 @@ Game::Game():mWindow(sf::VideoMode(800,600), "SFML"),
 
     try {
         textures.load(Textures::Airplane,"Media/Textures/Eagle.png");
+        //mFont.loadFromFile("Media/arial.ttf");
+        fonts.load(Fonts::Arial,"Media/arial.ttf");
     }
 
     catch (std::runtime_error& e)
@@ -39,8 +40,8 @@ Game::Game():mWindow(sf::VideoMode(800,600), "SFML"),
     mPlayer.setTexture(textures.get(Textures::Airplane));
     mPlayer.setPosition(100.f,100.f);
 
-    mFont.loadFromFile("Media/arial.ttf");
-	mStatisticsText.setFont(mFont);
+
+	mStatisticsText.setFont(fonts.get(Fonts::Arial));
 	mStatisticsText.setPosition(5.f, 5.f);
 	mStatisticsText.setCharacterSize(10);
 }

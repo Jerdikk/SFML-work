@@ -3,16 +3,16 @@
 	<clocale>
 	"game.h"
 
-1478855374 source:/home/user/sfml/tutors/1/test1/game.cpp
+1478858187 source:/home/user/sfml/tutors/1/test1/game.cpp
 	"game.h"
 	<iostream>
 
-1478855619 /home/user/sfml/tutors/1/test1/game.h
+1478858098 /home/user/sfml/tutors/1/test1/game.h
 	<SFML/Graphics.hpp>
 	"ResourceManager.h"
 	<sstream>
 
-1478856292 /home/user/sfml/tutors/1/test1/ResourceManager.h
+1478858053 /home/user/sfml/tutors/1/test1/ResourceManager.h
 	<map>
 	<string>
 	<memory>

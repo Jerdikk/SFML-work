@@ -18,6 +18,14 @@ namespace Textures
         };
 }
 
+namespace Fonts
+{
+    enum ID {
+        Arial
+        };
+}
+
+
 template <typename Resource, typename Identifier>
 class ResourceHolder
 {

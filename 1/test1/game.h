@@ -17,9 +17,9 @@ private:
         void render();
 
         sf::RenderWindow mWindow;
-        sf::Texture  mTexture;
+        //sf::Texture  mTexture;
         sf::Sprite   mPlayer;
-        sf::Font	mFont;
+        //sf::Font	mFont;
 		sf::Text	mStatisticsText;
 		sf::Time	mStatisticsUpdateTime;
 		std::size_t	mStatisticsNumFrames;
@@ -30,6 +30,7 @@ private:
         bool mIsMovingRight;
 
         ResourceHolder<sf::Texture, Textures::ID> textures;
+        ResourceHolder<sf::Font, Fonts::ID> fonts;
 };
 
 #include <sstream>
