@@ -29,7 +29,7 @@ private:
         bool mIsMovingLeft;
         bool mIsMovingRight;
 
-        TextureHolder textures;
+        ResourceHolder<sf::Texture, Textures::ID> textures;
 };
 
 #include <sstream>

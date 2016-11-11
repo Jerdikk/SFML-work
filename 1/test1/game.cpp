@@ -1,4 +1,5 @@
 #include "game.h"
+#include <iostream>
 
 const sf::Time TimePerFrame = sf::seconds(1.f/60.f);
 const float PlayerSpeed=100.f;
@@ -25,7 +26,15 @@ Game::Game():mWindow(sf::VideoMode(800,600), "SFML"),
         // Fail load texture
     //}
 
-    textures.load(Textures::Airplane,"Media/Textures/Eagle.png");
+    try {
+        textures.load(Textures::Airplane,"Media/Textures/Eagle.png");
+    }
+
+    catch (std::runtime_error& e)
+	{
+		std::cout << "Exception: " << e.what() << std::endl;
+		//return 1;
+	}
 
     mPlayer.setTexture(textures.get(Textures::Airplane));
     mPlayer.setPosition(100.f,100.f);
