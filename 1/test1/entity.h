@@ -1,8 +1,10 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include "scenenode.h"
+#include <SFML/Graphics.hpp>
 
-class Entity
+class Entity : public SceneNode
 {
     public:
         sf::Vector2f getVelocity() const { return mVelocity; }

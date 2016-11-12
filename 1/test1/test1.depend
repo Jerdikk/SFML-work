@@ -28,3 +28,46 @@
 
 1478856148 /home/user/sfml/tutors/1/test1/ResourceManager.inl
 
+1478890872 source:/home/user/sfml/tutor/sfml-work/1/test1/game.cpp
+	"game.h"
+	<iostream>
+
+1478890872 /home/user/sfml/tutor/sfml-work/1/test1/game.h
+	<SFML/Graphics.hpp>
+	"ResourceManager.h"
+	<sstream>
+
+1478890872 /home/user/sfml/tutor/sfml-work/1/test1/ResourceManager.h
+	<map>
+	<string>
+	<memory>
+	<stdexcept>
+	<cassert>
+	<SFML/Graphics.hpp>
+	"ResourceManager.inl"
+
+1478890872 /home/user/sfml/tutor/sfml-work/1/test1/ResourceManager.inl
+
+1478795221 source:/home/user/sfml/tutor/sfml-work/1/test1/main.cpp
+	<clocale>
+	"game.h"
+
+1478890872 source:/home/user/sfml/tutor/sfml-work/1/test1/aircraft.cpp
+	"aircraft.h"
+
+1478891224 /home/user/sfml/tutor/sfml-work/1/test1/aircraft.h
+	"entity.h"
+
+1478891269 /home/user/sfml/tutor/sfml-work/1/test1/entity.h
+	<SFML/Graphics.hpp>
+
+1478890872 source:/home/user/sfml/tutor/sfml-work/1/test1/entity.cpp
+	"entity.h"
+
+1478891581 source:/home/user/sfml/tutor/sfml-work/1/test1/scenenode.cpp
+	"scenenode.h"
+	"assert.h"
+
+1478891283 /home/user/sfml/tutor/sfml-work/1/test1/scenenode.h
+	<SFML/Graphics.hpp>
+
