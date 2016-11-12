@@ -26,7 +26,7 @@ Game::Game():mWindow(sf::VideoMode(800,600), "SFML"),
     //}
 
     try {
-        textures.load(Textures::Airplane,"Media/Textures/Eagle.png");
+        textures.load(Textures::Eagle,"Media/Textures/Eagle.png");
         //mFont.loadFromFile("Media/arial.ttf");
         fonts.load(Fonts::Arial,"Media/arial.ttf");
     }
@@ -37,7 +37,7 @@ Game::Game():mWindow(sf::VideoMode(800,600), "SFML"),
 		//return 1;
 	}
 
-    mPlayer.setTexture(textures.get(Textures::Airplane));
+    mPlayer.setTexture(textures.get(Textures::Eagle));
     mPlayer.setPosition(100.f,100.f);
 
 

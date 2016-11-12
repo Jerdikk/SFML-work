@@ -29,8 +29,8 @@ private:
         bool mIsMovingLeft;
         bool mIsMovingRight;
 
-        ResourceHolder<sf::Texture, Textures::ID> textures;
-        ResourceHolder<sf::Font, Fonts::ID> fonts;
+        TextureHolder textures;
+        FontHolder fonts;
 };
 
 #include <sstream>

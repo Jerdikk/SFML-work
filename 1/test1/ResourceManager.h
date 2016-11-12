@@ -13,8 +13,9 @@ namespace Textures
 {
     enum ID {
         Landscape,
-        Airplane,
-        Missile
+        Missile,
+        Eagle,
+        Raptor
         };
 }
 
@@ -44,6 +45,10 @@ class ResourceHolder
 };
 
 #include "ResourceManager.inl"
+
+
+typedef ResourceHolder<sf::Texture, Textures::ID> TextureHolder;
+typedef ResourceHolder<sf::Font, Fonts::ID> FontHolder;
 
 
 

@@ -1,6 +1,6 @@
 #include "aircraft.h"
 
-Aircraft::Aircraft(Type type): mType(type)
+Aircraft::Aircraft(Type type, const TextureHolder& textures): mType(type)
 {
     //ctor
 }
