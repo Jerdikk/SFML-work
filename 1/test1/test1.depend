@@ -52,22 +52,23 @@
 	<clocale>
 	"game.h"
 
-1478890872 source:/home/user/sfml/tutor/sfml-work/1/test1/aircraft.cpp
+1478970729 source:/home/user/sfml/tutor/sfml-work/1/test1/aircraft.cpp
 	"aircraft.h"
 
-1478891224 /home/user/sfml/tutor/sfml-work/1/test1/aircraft.h
+1478970034 /home/user/sfml/tutor/sfml-work/1/test1/aircraft.h
 	"entity.h"
 
-1478891269 /home/user/sfml/tutor/sfml-work/1/test1/entity.h
+1478895645 /home/user/sfml/tutor/sfml-work/1/test1/entity.h
+	"scenenode.h"
 	<SFML/Graphics.hpp>
 
 1478890872 source:/home/user/sfml/tutor/sfml-work/1/test1/entity.cpp
 	"entity.h"
 
-1478891581 source:/home/user/sfml/tutor/sfml-work/1/test1/scenenode.cpp
+1478970891 source:/home/user/sfml/tutor/sfml-work/1/test1/scenenode.cpp
 	"scenenode.h"
 	"assert.h"
 
-1478891283 /home/user/sfml/tutor/sfml-work/1/test1/scenenode.h
+1478895799 /home/user/sfml/tutor/sfml-work/1/test1/scenenode.h
 	<SFML/Graphics.hpp>
 
