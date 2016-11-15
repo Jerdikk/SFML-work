@@ -2,6 +2,8 @@
 #define SCENENODE_H
 
 #include <SFML/Graphics.hpp>
+#include <vector>
+#include <memory>
 
 class SceneNode : public sf::Transformable, public sf::Drawable,
                   private sf::NonCopyable

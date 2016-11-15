@@ -7,11 +7,13 @@
 class Entity : public SceneNode
 {
     public:
-        sf::Vector2f getVelocity() const { return mVelocity; }
-        void setVelocity(sf::Vector2f val) { mVelocity = val; }
-        void setVelocity(float vx, float vy) { mVelocity.x = vx;mVelocity.y = vy; }
+		sf::Vector2f getVelocity() const;
+		void setVelocity(sf::Vector2f val);
+		void setVelocity(float vx, float vy);
     protected:
     private:
+		virtual void		updateCurrent(sf::Time dt);
+
         sf::Vector2f mVelocity;
 };
 

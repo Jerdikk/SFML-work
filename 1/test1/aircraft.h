@@ -13,10 +13,12 @@ class Aircraft : public Entity
             Eagle,
             Raptor
         };
-        explicit Aircraft(Type type, const TextureHolder& textures);
-        virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+        Aircraft(Type type, const TextureHolder& textures);
+        
     protected:
     private:
+		virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+
         Type mType;
         sf::Sprite mSprite;
 };

@@ -1,10 +1,10 @@
-#include "game.h"
+﻿#include "game.h"
 #include <iostream>
 
 const sf::Time TimePerFrame = sf::seconds(1.f/60.f);
 const float PlayerSpeed=100.f;
 
-Game::Game():mWindow(sf::VideoMode(800,600), "SFML"),
+Game::Game():mWindow(sf::VideoMode(800,600), "SFML", sf::Style::Close),
              mPlayer()
              , mStatisticsText()
              , mStatisticsUpdateTime()
@@ -14,17 +14,6 @@ Game::Game():mWindow(sf::VideoMode(800,600), "SFML"),
              , mIsMovingRight(false)
              , mIsMovingLeft(false)
 {
-    //mPlayer.setRadius(40.f);
-    //mPlayer.setPosition(100.f,100.f);
-    //mPlayer.setFillColor(sf::Color::Cyan);
-
-
-    // Load a sprite to display
-    //if (!mTexture.loadFromFile("Media/Textures/Eagle.png"))
-    //{
-        // Fail load texture
-    //}
-
     try {
         textures.load(Textures::Eagle,"Media/Textures/Eagle.png");
         //mFont.loadFromFile("Media/arial.ttf");
@@ -144,6 +133,10 @@ void Game::updateStatistics(sf::Time elapsedTime)
 
 		mStatisticsText.setString(L"Кадров в секунду = " + towString(mStatisticsNumFrames) + L"\n" +
 			L"Время обновления = " + towString(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + L"us");
+
+		
+		
+
         mStatisticsUpdateTime -= sf::seconds(1.0f);
 		mStatisticsNumFrames = 0;
 	}
